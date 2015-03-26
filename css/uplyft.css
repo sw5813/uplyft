@@ -1,9 +1,55 @@
 
-body { margin: 0; padding: 0; }
+body { margin: 0; padding: 0; background-color: #012b5d }
 
-.Header { position: absolute; left: 0; top: 0; width: 100%; height: 30px; line-height: 30px; text-align: center; background: #000; color: #fff; }
-.Footer { position: absolute; left: 0; bottom: 0; width: 100%; height: 30px; line-height: 30px; text-align: center; background: #000; color: #fff; }
-
-.SlideContainer { position: absolute; left: 0; top: 30px; width: 100%; overflow: hidden; }
+.SlideContainer { position: absolute; left: 0; width: 100%; overflow: hidden; }
 .Slides { position: absolute; left: 0; top: 0; height: 100%; }
 .Slides > div { float: left; height: 100% }
+
+#nav {
+	width: 100%;
+	position: absolute;
+  	top: 50px;
+  	right: 10px;
+}
+#home-nav, #about-nav {
+	display: inline-block;
+	z-index: 98;
+	text-decoration: underline;
+	cursor: pointer;
+	text-align: center;
+}
+h1, h2, p, a {
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+}
+p, a {
+	font-size: 18px;
+	font-family: 'Lato';
+	font-weight: 300;
+}
+#about {
+	text-align: center;
+	padding-top: 200px;
+}
+
+/* Preloader */
+#preloader {
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background-color:#fff; /* change if the mask should have another color then white */
+	z-index:99; /* makes sure it stays on top */
+}
+#status {
+	width:500px;
+	height:300px;
+	position:absolute;
+	left:40%; /* centers the loading animation horizontally one the screen */
+	top:40%; /* centers the loading animation vertically one the screen */
+	background-image:url(../img/balloon.gif); /* path to your loading animation */
+	background-repeat:no-repeat;
+	background-position:center;
+	margin:-100px 0 0 -100px; /* is width and height divided by two */
+}

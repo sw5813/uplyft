@@ -17,7 +17,8 @@
     <link href="css/uplyft.css" rel="stylesheet" type="text/css">
 
     <!-- Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -30,44 +31,38 @@
   </head>
 
   <body>
-  	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container-fluid">
-        <!-- All links get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#imlinks">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="status"></div>
+    </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="imlinks">
-          <ul class="nav navbar-nav">
-            <li id="home"><a>Home</a></li>
-            <li id="about"><a>About</a></li>
-          </ul>
-          
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
+    <div id="nav">
+      <h2 id="home-nav" class="col-xs-offset-5 col-xs-1">home</h2>
+      <h2 id="about-nav" class="col-xs-1">about</h2>
+    </div>
+
     <div class="SlideContainer">
   		<div class="Slides">
+        
   			<div class="Slide" id="form">
 				<!-- Change the width and height values to suit you best -->
 				<div class="typeform-widget" data-url="https://sw5813.typeform.com/to/YSHW7l" data-text="uplYft" style="width:100%;height:110%;"></div>
 				<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'widget.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
 			</div>
 			<div class="Slide" id="info">
-		        <h1>Mission</h1>
-		        <h1>Timeline</h1>
-		        <h1>Contact Us</h1>
+        <div id="about" class="col-sm-offset-3 col-sm-6">
+	        <h1>Mission</h1>
+          <p>
+            uplYft is an organization that spreads morale on Yale University’s campus by surprising people with organized acts of kindness. Know someone who needs a morale boost? Fill out our form and we'll complete an organized, surprising act of kindness within 7 days! 
+          </p>
+	        <h1>Contact Us</h1>
+          <a href="mailto:hello@uplyft.org">hello@uplyft.org</a>
+        </div>
 			</div>
 		</div>
 	</div>
 
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 	<script type="text/javascript">
 		$(function(){
@@ -80,13 +75,13 @@
 
 		  var pos = 0;
 
-		  $('#home').click(function(){
+		  $('#home-nav').click(function(){
 		  	if (pos != 0) {
 			    pos++;
 			    $('.Slides').animate({ left: (pos * w) + 'px' });
 			}
 		  });
-		  $('#about').click(function(){
+		  $('#about-nav').click(function(){
 		  	if (pos == 0) {
 			    pos--;
 			    $('.Slides').animate({ left: (pos * w) + 'px' });
@@ -95,6 +90,13 @@
 
 		});
 	</script>
+  <script type="text/javascript">
+    $(window).load(function() { 
+      //Preloader 
+      $('#status').delay(1150).fadeOut(); 
+      $('#preloader').delay(1150).fadeOut('slow');
+    });
+  </script>
 
   </body>
 </html>
