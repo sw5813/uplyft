@@ -37,8 +37,8 @@
     </div>
 
     <div id="nav">
-      <h2 id="home-nav" class="col-xs-offset-5 col-xs-1">home</h2>
-      <h2 id="about-nav" class="col-xs-1">about</h2>
+      <h2 id="home-nav" class="col-xs-offset-3 col-xs-3 col-md-offset-5 col-md-1">home</h2>
+      <h2 id="about-nav" class="col-xs-1 col-md-1">about</h2>
     </div>
 
     <div class="SlideContainer">
@@ -66,29 +66,32 @@
 
 	<script type="text/javascript">
 		$(function(){
-		  var w = $(window).width();
-		  var h = $(window).height();
-		  var slides = $('.Slides > div');
-		  $('.SlideContainer').css({ height: (h) + 'px' });
-		  $('.Slides').css({ width: slides.length + '00%' });
-		  slides.css({ width: w + 'px' });
+        size_browser = function(){
+          var w = $(window).width();
+          var h = $(window).height();
+          var slides = $('.Slides > div');
+          $('.SlideContainer').css({ height: (h) + 'px' });
+          $('.Slides').css({ width: slides.length + '00%' });
+          slides.css({ width: w + 'px' });
 
-		  var pos = 0;
+          var pos = 0;
 
-		  $('#home-nav').click(function(){
-		  	if (pos != 0) {
-			    pos++;
-			    $('.Slides').animate({ left: (pos * w) + 'px' });
-			}
-		  });
-		  $('#about-nav').click(function(){
-		  	if (pos == 0) {
-			    pos--;
-			    $('.Slides').animate({ left: (pos * w) + 'px' });
-			}
-		  });
+          $('#home-nav').click(function(){
+            if (pos != 0) {
+              pos++;
+              $('.Slides').animate({ left: (pos * w) + 'px' });
+          }
+          });
+          $('#about-nav').click(function(){
+            if (pos == 0) {
+              pos--;
+              $('.Slides').animate({ left: (pos * w) + 'px' });
+          }
+          });
+        }
 
-		});
+        $(window).bind("resize", size_browser).trigger("resize");
+  		});
 	</script>
   <script type="text/javascript">
     $(window).load(function() { 
